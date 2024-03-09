@@ -1,0 +1,20 @@
+.loader {
+  width: 400px;
+    aspect-ratio: 1;
+    --g1:conic-gradient(from  90deg at top    3% left  3%,#0000 90deg,rgb(12, 2, 139) 0);
+    --g2:conic-gradient(from -90deg at bottom 3% right 3%,#0000 90deg, rgb(12, 2, 139) 0);
+    background:
+      var(--g1),var(--g1),var(--g1),var(--g1), 
+      var(--g2),var(--g2),var(--g2),var(--g2);
+    background-position: 0 0,100% 0,100% 100%,0 100%;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    animation: l11 5s infinite;
+  }
+  @keyframes l11 {
+    0%   {background-size:64% 27%,27% 27%,27% 64%,64% 64%}
+    25%  {background-size:64% 64%,27% 64%,27% 27%,64% 27%}
+    50%  {background-size:27% 64%,64% 64%,64% 27%,27% 27%}
+    75%  {background-size:27% 27%,64% 27%,64% 64%,27% 64%}
+    100% {background-size:64% 27%,27% 27%,27% 64%,64% 64%}
+  }

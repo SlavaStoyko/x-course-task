@@ -1,0 +1,83 @@
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style:none ;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+
+#purchase{
+margin: 25px;
+padding: 15px 65px;
+border: 3px solid black;
+border-radius: 5px;
+
+}
+.box_list{
+    width: 100%;
+    
+}
+.list{
+    
+    display: flex;
+    padding: 0 10px;
+    justify-content: center;
+    align-items: center;
+   max-width: 1200px;
+   margin: 0 auto;
+   overflow-y: scroll;
+}
+.list *{
+    margin: 10px 15px;
+}
+.list_books{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    height: 340px;
+    
+}
+
+.listArticleBasket{
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 1fr;
+    align-items: center;
+    
+}
+.listArticleBasket > *{
+    margin: 10px;
+}
+.cartCountItem{justify-self: center;}
+.cartPriceItem{justify-self: end;}
+
+.totalPriceBooks{
+    text-align: end;
+    margin-right: 25px;
+}
+
+
+.TextAboutBasket{
+    text-align: center;
+    font-size: 28px;
+}
+
+/* ERROR */
+.error404{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.error svg{
+width: 100%;
+
+}

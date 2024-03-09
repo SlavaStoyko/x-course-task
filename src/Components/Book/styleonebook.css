@@ -1,0 +1,167 @@
+@font-face {
+    font-family: "Playfair Display";
+    src:
+      url("../../fonts/Playfair/PlayfairDisplay-Italic-VariableFont_wght.ttf"),
+      url("../../fonts/Playfair/PlayfairDisplay-VariableFont_wght.ttf");
+  }
+  @font-face {
+    font-family: "Roboto";
+    src:
+      url("../../fonts/Roboto/RobotoMono-Italic-VariableFont_wght.ttf"),
+      url("../../fonts/Roboto/RobotoMono-VariableFont_wght.ttf");
+  }
+/* *,::before,::after{border:0;margin: 0;} */
+.title-hiden{
+    position: absolute;
+    left:-10000px;
+    overflow:hidden;
+}
+.title{font-family:"Playfair Display", serif; font-style: italic;}
+p{margin: 0;}
+body{ 
+      /* font-family: 'Playfair Display', serif; */ 
+      font-family: 'Roboto Mono', monospace; 
+      font-size: 18px;
+       line-height: 1.8;
+    height: 100%;
+    }
+    .container{
+        max-width: 1460px;
+          box-sizing: border-box; 
+          padding: 0 10px; 
+          margin: 0 auto;
+    }
+ Chrome, Safari, Edge, Opera,
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+ Firefox *
+input[type=number] {
+  -moz-appearance: textfield;
+}
+@media (max-width:1220px){
+.main{
+    flex-wrap: wrap;
+}
+}
+@media (max-width:880px){
+    .descriptionbook_part1{
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+    }
+    .ord{text-align: center;}
+    .order_desctext_parag{font-weight: 400; font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-left:0px; text-transform: uppercase; font-style: italic;}
+    
+
+    }
+
+.main{
+display: flex;
+justify-content: space-around;
+gap: 20px;
+
+}
+
+.descriptionbook{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.descriptionbook_part1{
+    display: flex;
+    justify-content: flex-start;
+    
+    gap: 60px;
+}
+
+
+.descimg{
+    border: 10px groove rgb(129, 137, 252);
+    
+    padding: 25px 65px;
+    border-radius: 25px;
+    background-color: rgb(206, 223, 255);
+}
+.descimg img{
+    box-shadow: 15px 10px 0px 1px rgb(229, 228, 223),25px 15px 0px 1px rgb(251, 253, 253);;
+    border-radius: 2%;
+}
+.order_desctext_title{font-weight: 600; font-family: 'Playfair Display', serif; font-size: 1.3rem;}
+@media (min-width:880px){
+    .order_desctext_parag{font-weight: 400; font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-left:80px; text-transform: uppercase; font-style: italic;}
+    }
+    @media (max-width:380px){
+        .descimg{
+            
+            padding: 25px;
+            
+        }
+    }
+
+
+/* -----------------------------------------orderblock----------------------------------- */
+.setPlaseArrow{
+    position: relative;
+}
+.orderblock{border:2px solid black; align-items: center; width: 320px; height:fit-content; position: relative; padding: 10px; border-radius: 10px; user-select:none;}
+.orderconteiner{width: 320px;
+    height: fit-content;}
+.orderbtn{font-weight: 600; text-align: center; padding: 5px 10px; border:1px solid black; border-radius: 5px; position: absolute; bottom: 10px; right: 15px;}
+.orderbtn:hover{background-color: black; color: white;}
+input.ordnumb{border:1px solid black; width: 50px; height: 25px; border-radius: 10px;text-align: center;}
+.dpricce{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+.dpricce *{
+/*margin: 10px 0;*/
+align-self:center;
+}
+.oneBook{
+    margin-bottom: 30px;
+}
+.totalBook{
+    margin: 30px 0 60px 0;
+}
+/* .navPriceBtn{
+    transform: translateY(5px);
+    cursor: pointer;
+} */
+.navPriceBtn{
+    position: absolute;
+    cursor: pointer;
+    right: 0px;
+    opacity: 1;
+} 
+/* .navPriceBtn.visibleAtr{
+    opacity: 1;
+    transition: 0.3s ease-out;
+}  */
+#navPriceBtnMax{
+top: -35px;
+
+}
+/* #navPriceBtnMax:hover{
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in;
+    } */
+#navPriceBtnMin{
+    bottom: -45px;
+    }
+    /* #navPriceBtnMin:hover{
+        transform: translateY(5px);
+        transition: all 0.3s ease-in;
+        } */
+.descriptionbook_psart2 .order_desctext_parag{
+    text-transform: lowercase;
+    font-style: normal;
+    text-align:justify;
+}
+@media (max-width:460px) {
+    .orderconteiner{width: calc(180px + 140 * (100vw - 220px) / 460); margin: 0 auto;}
+}

@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Playfair Display";
+    src:
+      url("../fonts/Playfair/PlayfairDisplay-Italic-VariableFont_wght.ttf"),
+      url("../fonts/Playfair/PlayfairDisplay-VariableFont_wght.ttf");
+  }
+  @font-face {
+    font-family: "Roboto";
+    src:
+      url("../fonts/Roboto/RobotoMono-Italic-VariableFont_wght.ttf"),
+      url("../fonts/Roboto/RobotoMono-VariableFont_wght.ttf");
+  }

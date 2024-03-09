@@ -1,0 +1,20 @@
+footer{margin-top: 25px;
+       background-color: white;
+       position: sticky;
+       bottom: 0;
+       width: 100%;
+    }
+footer p {
+            text-align: center;
+            padding: 10px 0;
+        }
+footer a{
+    background: inherit;
+    border: 0;
+    text-decoration: underline;
+    color: blue;
+    font-size: 20px;
+}
+a:hover{
+    color: rgb(82, 82, 255);
+}

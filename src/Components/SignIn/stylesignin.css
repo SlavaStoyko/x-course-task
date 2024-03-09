@@ -1,0 +1,107 @@
+@font-face {
+    font-family: "Playfair Display";
+    src:
+      url("../../fonts/Playfair/PlayfairDisplay-Italic-VariableFont_wght.ttf"),
+      url("../../fonts/Playfair/PlayfairDisplay-VariableFont_wght.ttf");
+  }
+  @font-face {
+    font-family: "Roboto";
+    src:
+      url("../../fonts/Roboto/RobotoMono-Italic-VariableFont_wght.ttf"),
+      url("../../fonts/Roboto/RobotoMono-VariableFont_wght.ttf");
+  }
+*{
+   padding: 0; margin: 0; border: 0;
+}
+html,body{box-sizing: border-box; height: 100%;}
+
+button{background-color: #FFFFFF;}    
+.pictureuser{width: 160px;height: 160px; 
+    box-shadow: -5px 0px 10px green, 5px 0px 10px red, 0px -6px 10px orange, 0px 6px 10px blue;
+    border-radius: 50%;
+}
+/* img{width: 160px;height: 160px; 
+    box-shadow: -5px 0px 10px green, 5px 0px 10px red, 0px -6px 10px orange, 0px 6px 10px blue;
+    border-radius: 50%;
+} */
+h1{font-size: 26px;}
+.container{
+    max-width: 1460px;
+      box-sizing: border-box; 
+      padding: 0 10px; 
+      margin: 0 auto;
+}
+
+
+.imgpicture, .formblock{
+margin: 25px 0;
+}
+.conteiner{
+   /* max-width: 1936px; */
+    padding: 0 8px;
+    
+}
+.headerBlock{
+    border-top:1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    text-align: center;
+}  
+.imgpicture{
+    padding: 0 20%;
+    
+}
+.formblock *{
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+}
+.focus-items{
+    border:1px solid black;
+    border-radius: 10px;
+    height: 25px;
+   
+}
+.I{
+    background-color: rgb(60, 60, 124);
+    color: #FFFFFF;
+}
+.B{
+    background-color: rgb(190, 140, 0);
+}
+.B:hover{
+    background-color: rgb(102, 75, 0);
+    border-color: white;
+    color: #FFFFFF;
+}
+.wraplogoimg{
+    position: relative;
+}
+.identify{
+    position: absolute;
+    top: 53px;
+    left: 55px;
+}
+.identifyItem{
+    width: 50px;
+}
+.identifyItem.higenstatus{
+    visibility: hidden;
+}
+
+ @media screen and (min-width:320px){
+    img{width: 200px; height: 200px;}
+    .formblock *{
+        width: 200px;
+    }  
+    .flexform{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+     .headerBlock{
+        text-align: left;
+    }  
+}

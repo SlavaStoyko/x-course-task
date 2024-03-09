@@ -1,0 +1,145 @@
+
+
+.title h1{font-size: 23px;}
+.menu-btn{
+    display: none;
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+}
+
+@media (max-width:880px){
+    
+    .header_block{display: flex; align-items: center;
+        justify-content: space-around;}
+        .header_block.active{ 
+    align-items: start;
+    justify-content: space-around;
+    position: fixed;
+    background: rgb(178, 176, 252);
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    transform: translateX(-18px);
+    }
+    .nav_site{
+        position: absolute;
+        width: 100%;
+        display: none;
+        top:25%;
+        left: 0;
+        gap: 50px;
+        z-index: 1;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0s ease-in 0s;
+    }
+    .nav_site  *{width: 90%;  margin: 0 auto;  text-align: center;}
+    .nav_site.active{display: flex;}
+    .header_block.active .menu-btn{transform: translateY(20px);}
+    .menu-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (min-width:880px){
+    .header_block{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        gap: 5px;
+        
+    }
+    
+    .nav_site{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+    }
+}
+@media (max-width:460px){
+    .title{
+    font-size:calc(10px + 6 * (100vw - 220px) / 460);
+    }
+}
+@media (max-width:360px){
+    .nav_title{
+        transform: translateY(10px);
+    }
+    .title{
+    font-size:calc(10px + 6 * (100vw - 220px) / 460);
+    }
+ 
+    .header_block{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .header_block.active{ 
+        align-items: center;
+        justify-content: start;
+    } 
+    .title h1{font-size: 14px;}  
+}
+.log_btn button{
+    height: 35px;
+    border-radius: 8px;
+    color: #FFF;
+    background-color: blue;
+    border: 4px solid black
+}
+.order_buscet{
+    order:4;
+}
+.log_btn{order:3}
+.icon_user{order:1}
+.icon_user img {width: 50px; height: 50px;}
+.name_user{order:2}
+.svgHeaderbasket{
+    width: 50px;
+}
+
+
+.burger {
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+  .burger span {
+    position: absolute;
+    background-color: #1E2E36;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+    transition: all 0.3s ease 0s;
+  }
+  .burger::before,
+  .burger::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    background-color: #1E2E36;
+    height: 2px;
+    right: 0;
+    transition: all 0.3s ease 0s;
+  }
+  .burger::before {
+    top: 0;
+  }
+  .burger::after {
+    bottom: 0;
+  }
+  .burger.active span {
+    transform: scale(0);
+  }
+  .burger.active::before {
+    top: 9px;
+    transform: rotate(45deg);
+  }
+  .burger.active::after {
+    bottom: 9px;
+    transform: rotate(-45deg);
+  }
