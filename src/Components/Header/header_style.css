@@ -8,53 +8,53 @@
     height: 50px;
     border-radius: 16px;
 }
-
 @media (max-width:880px){
     
     .header_block{display: flex; align-items: center;
         justify-content: space-around;}
         .header_block.active{ 
-    align-items: start;
-    justify-content: space-around;
-    position: fixed;
-    background: rgb(178, 176, 252);
-    width: 100vw;
-    height: 100vh;
-    z-index: 10;
-    transform: translateX(-18px);
+            align-items: start;
+            justify-content: space-around;
+            position: fixed;
+            background: rgb(178, 176, 252);
+            width: 100vw;
+            height: 100vh;
+            z-index: 10;
+            transform: translateX(-18px);
+        }
+        .nav_site{
+            position: absolute;
+            width: 100%;
+            display: none;
+            top:25%;
+            left: 0;
+            gap: 20px;
+            z-index: 1;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0s ease-in 0s;
+        }
+        .nav_site  *{width: 90%;  margin: 0 auto;  text-align: center;}
+        .nav_site.active{display: flex;}
+        .header_block.active .menu-btn{transform: translateY(20px);}
+        .menu-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
-    .nav_site{
-        position: absolute;
-        width: 100%;
-        display: none;
-        top:25%;
-        left: 0;
-        gap: 50px;
-        z-index: 1;
-        flex-direction: column;
-        align-items: center;
-        transition: all 0s ease-in 0s;
-    }
-    .nav_site  *{width: 90%;  margin: 0 auto;  text-align: center;}
-    .nav_site.active{display: flex;}
-    .header_block.active .menu-btn{transform: translateY(20px);}
-    .menu-btn{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
-@media (min-width:880px){
-    .header_block{
-        display: flex;
-        justify-content:space-between;
-        align-items: center;
-        gap: 5px;
+    @media (min-width:880px){
+        .header_block{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            gap: 5px;
+            
+        }
+     
         
-    }
-    
-    .nav_site{
-        display: flex;
+        .nav_site{
+            display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 15px;
@@ -99,6 +99,7 @@
 .name_user{order:2}
 .svgHeaderbasket{
     width: 50px;
+    height: 50px;
 }
 
 

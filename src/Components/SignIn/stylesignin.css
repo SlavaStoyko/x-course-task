@@ -69,11 +69,17 @@ margin: 25px 0;
 }
 .B{
     background-color: rgb(190, 140, 0);
+    border:1px solid black;
+    border-radius: 10px;
+    height: 25px;
 }
 .B:hover{
     background-color: rgb(102, 75, 0);
     border-color: white;
     color: #FFFFFF;
+    border:1px solid black;
+    border-radius: 10px;
+    height: 25px;
 }
 .wraplogoimg{
     position: relative;
@@ -104,4 +110,12 @@ margin: 25px 0;
      .headerBlock{
         text-align: left;
     }  
+}
+@media screen and (max-width:900px) and (orientation: landscape){
+    .pictureuser{width: 100px;height: 100px;}
+    .identify{ top: 5px;left: 25px;}
+    h1{font-size: 14px;}
+    .formblock{
+        margin: 0px;
+        }
 }

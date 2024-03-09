@@ -6,22 +6,26 @@ import './style.css'
 
 export const Basket = () =>{
 const [LocalStorageData,setLocalStorageData] = useState(LocalStorageService.get(LS_KEYS.BOOK)||[]);
+const [isActiveCart, setIsActiveCart] = useState();
 useEffect(()=>{
-if(LocalStorageData == null){
-    setISCheckBasket(true);
-}
-},[])
-const [isCheckBasket, setISCheckBasket] = useState(false);
+    if(LocalStorageData.length){
+        setIsActiveCart(true);
+    }else if(undefined){
+        setIsActiveCart(false);
+
+    }
+},[LocalStorageData])
 const handleCleanStorage = () => {
     setLocalStorageData(LocalStorageService.remove(LS_KEYS.BOOK));
-    setISCheckBasket(true)
+    setLocalStorageData(LocalStorageService.set(LS_KEYS.BOOK,[]));
+    setIsActiveCart(false)
 }
-
+console.log(LocalStorageData.length);
     return (
         <div className="box">
-            {!isCheckBasket  ? <button onClick={handleCleanStorage} disabled={isCheckBasket} id="purchase" type="button">Purchase</button> : null}
+            {isActiveCart  ? <button onClick={handleCleanStorage} disabled={!isActiveCart} id="purchase" type="button">Purchase</button> : null}
             
-            {!isCheckBasket  ? < ListBasket booksInCart={LocalStorageData}  /> : < EmptyBasket /> }
+            {isActiveCart  ? < ListBasket booksInCart={LocalStorageData}  /> : < EmptyBasket /> }
        
         </div>
      

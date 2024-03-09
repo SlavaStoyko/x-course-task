@@ -52,7 +52,7 @@ const handlelLSLogin = () =>{
                         <form action="/" method="post">
                             <div className="label "><label htmlFor="username"><strong>Username</strong></label><br/></div>
                             <div className="input styleform"><input onChange={getInput} className="focus-items I" type="text" id="username" name="username" placeholder="type Username"></input></div>
-                            <div className="btn styleform"><button type="button" onClick={handlelLSLogin} className="focus-items B">Sign In</button></div>
+                            <div className="btn styleform"><button disabled={!inputvalue.length} className={!inputvalue.length ? "focus-items B:hover" : " B"} type="button" onClick={handlelLSLogin} >Sign In</button></div>
                         </form>
                     </div>
                 </div>

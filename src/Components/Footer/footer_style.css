@@ -1,4 +1,4 @@
-footer{margin-top: 25px;
+footer{
        background-color: white;
        position: sticky;
        bottom: 0;
@@ -13,7 +13,7 @@ footer a{
     border: 0;
     text-decoration: underline;
     color: blue;
-    font-size: 20px;
+    font-size: 14px;
 }
 a:hover{
     color: rgb(82, 82, 255);

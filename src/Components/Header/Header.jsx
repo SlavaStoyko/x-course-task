@@ -7,7 +7,7 @@ import { LS_KEYS, LocalStorageService } from "../localStorage/localStorage";
 
 export const Header = ({islogin}) =>{
    
-    const [isActive, setActive] = useState(false);
+    const [isActive, setActive] = useState(true);
     const handleToggle = () => {
         setActive(!isActive);  };
     const handlerLogout = ()=> {
@@ -29,7 +29,7 @@ export const Header = ({islogin}) =>{
                 <button onClick={handleToggle} className={"menu-btn"}><div className={!isActive ? "burger active" : "burger"}><span></span></div></button>
                     <div className={!isActive ? "nav_site active" : "nav_site"}>
                         <div className="order_buscet">
-                        <div /* onClick={isActive} */ className="buscet_img">
+                        <div onClick={!isActive} className="buscet_img">
                             <svg className="svgHeaderbasket">< Link  onClick={chackBasket} to ="/basket"  type="button"><use xlinkHref={`${sprite}#basket`}></use></ Link ></svg>
                             </div>
                         </div>
