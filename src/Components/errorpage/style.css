@@ -51,6 +51,9 @@ flex-direction: column;
 width: 100%;
 
 }
-#report_error {
-    
+.errorGohomepages{
+    border: 1px solid rgb(102, 102, 102);
+    background-color: rgb(245, 245, 245);
+    padding: 5px 45px;
+    border-radius: 10px;
 }

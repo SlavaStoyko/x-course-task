@@ -7,7 +7,7 @@ export const ErrorPage = () => {
         <div className="box">
             
         <section className="box_list">
-            <h1 className="hidenheader">Error Page</h1>
+            <h1 className="visibility-hidden">Error Page</h1>
             <div className="list" key="ErrorPage">
                 <div className="error404">
                     <div className="error eimg1">
@@ -26,8 +26,8 @@ export const ErrorPage = () => {
                     </svg>
                 </div>
                 </div>
-                <p>Oops,something went wrong. 404 error</p>
-                    <Link to="/">Back to home page</Link>
+                <p style={{textAlign:"center"}}>Oops,something went wrong. 404 error</p>
+                    <Link className="errorGohomepages" to="/">Back to home page</Link>
                 </div>
                 </section>
                 </div>
