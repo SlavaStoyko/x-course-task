@@ -3,21 +3,22 @@ import './stylesignin.css';
 import avatar from '../../images/avatar.png';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import {LocalStorageService } from '../localStorage/localStorage';
+import {LS_KEYS, LocalStorageService } from '../localStorage/localStorage';
 import sprite from "../../images/sprites.svg";
 
 export const SignIn = ({name,isName,islogin}) => {
+    const navigate = useNavigate();
     const [inputvalue,setinputvalue] = useState('');
     
-const navigate = useNavigate();
 const getInput = ({target:{value}})=>{
     setinputvalue(value);
     
 }
 const handlelLSLogin = () =>{
     if(inputvalue.length >=4 && inputvalue.length <=16){
+        LocalStorageService.set(LS_KEYS.USER,inputvalue)
         islogin(true);
-        LocalStorageService.set("userName",inputvalue);
+       
         
         navigate('../', {replace:true});
     }

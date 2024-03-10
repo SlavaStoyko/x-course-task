@@ -7,20 +7,16 @@ import './style.css'
 
 export const Basket = () =>{
     
-const [LocalStorageData,setLocalStorageData] = useState(LocalStorageService.get(LS_KEYS.BOOK)||[]);
-const [isActiveCart, setIsActiveCart] = useState(true);
+const [isActiveCart, setIsActiveCart] = useState(!!LocalStorageService.get(LS_KEYS.BOOK));
 
 const handleCleanStorage = () => {
-    setLocalStorageData(LocalStorageService.remove(LS_KEYS.BOOK));
-    setIsActiveCart(false);
-    
+    setIsActiveCart(LocalStorageService.remove(LS_KEYS.BOOK));
 }
-console.log(typeof LocalStorageData);
 return (
     <div className="box">
             <button onClick={handleCleanStorage} disabled={!isActiveCart} id="purchase" type="button">Purchase</button>
             
-            {isActiveCart  ? < ListBasket booksInCart={LocalStorageData}  /> : < EmptyBasket /> }
+            {isActiveCart  ? < ListBasket booksInCart={LocalStorageService.get(LS_KEYS.BOOK)}  /> : < EmptyBasket /> }
        
         </div>
      

@@ -3,7 +3,7 @@ import sprite from '../../images/sprites.svg';
 import './header_style.css';
 import {useState } from "react";
 import avatar from '../../images/avatar.png';
-import {LocalStorageService } from "../localStorage/localStorage";
+import {LS_KEYS, LocalStorageService } from "../localStorage/localStorage";
 
 export const Header = ({islogin}) =>{
    
@@ -11,7 +11,7 @@ export const Header = ({islogin}) =>{
     const handleToggle = () => {
         setActive(!isActive);  };
     const handlerLogout = ()=> {
-        LocalStorageService.remove("userName");
+        LocalStorageService.remove(LS_KEYS.USER)
         islogin(false);
     
     }
@@ -35,7 +35,7 @@ export const Header = ({islogin}) =>{
                         </div>
                         <div className="log_btn" ><Link  onClick={handlerLogout} to={"/login"} type="button">LogOut</Link></div>
                         <div className="icon_user" ><img src={avatar} alt="avatar img"></img></div>
-                        <div className="name_user" ><p>{LocalStorageService.get("userName")}</p></div>
+                        <div className="name_user" ><p>{LocalStorageService.get(LS_KEYS.USER)}</p></div>
                     </div>
                     
                 </section>
