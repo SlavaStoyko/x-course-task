@@ -1,6 +1,6 @@
 
 
-.title h1{font-size: 23px;}
+.title .header_title .linkTitle{font-size: 23px; background-color:inherit; border: none;}
 .menu-btn{
     display: none;
     border: 1px solid black;
@@ -81,7 +81,7 @@
         align-items: center;
         justify-content: start;
     } 
-    .title h1{font-size: 14px;}  
+    .header_title .linkTitle{font-size: 14px; background-color:inherit; border: none;} 
 }
 .log_btn [type=button]{
     border: 1px solid rgb(102, 102, 102);

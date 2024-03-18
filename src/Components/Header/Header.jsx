@@ -25,7 +25,7 @@ export const Header = ({islogin}) =>{
         
         <div className="container">
             <section className={isActive ? "header_block active" : "header_block"}>
-                <div className="nav_title"><div className="title"><h1>X-course-task / Vyacheslav Stoyko</h1></div></div>
+                <div className="nav_title"><div className="title"><h1 className="header_title"><Link className="linkTitle" to ="/">X-course-task / Vyacheslav Stoyko</Link></h1></div></div>
                 <button onClick={handleToggle} className={"menu-btn"}><div className={isActive ? "burger active" : "burger"}><span></span></div></button>
                     <div className={isActive ? "nav_site active" : "nav_site"}>
                         <div className="order_buscet">

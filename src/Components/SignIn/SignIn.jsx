@@ -11,7 +11,7 @@ export const SignIn = ({name,isName,islogin}) => {
     const [inputvalue,setinputvalue] = useState('');
     
 const getInput = ({target:{value}})=>{
-    setinputvalue(value);
+    setinputvalue(value.trim());
     
 }
 const handlelLSLogin = () =>{
