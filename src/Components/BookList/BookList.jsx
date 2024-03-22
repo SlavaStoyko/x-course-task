@@ -78,7 +78,7 @@ export const BookList = () =>{
                         <p className="book_name">{item.title.length > 24 ? `${item.title.slice(0,24)}...` : item.title}</p>
                         <p className="book_autor">{item.author}</p>
                         <p className="price">{item.price}</p>
-                        <Link className="link_specific_books" to={`/booklist/book/${item.author}`}>View</Link>
+                        <Link className="link_specific_books" to={`/booklist/book/${item.id}`}>View</Link>
                         
                     </article>
                     )) }

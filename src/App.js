@@ -24,7 +24,7 @@ function App() {
           <Route index element={<PrivateRoutes isAuthenticated={isAuthenticated}>{isAuthenticated ? < Navigate to ="booklist"/> : < Navigate to ="login"/>} </PrivateRoutes>} />
           <Route path="/login" element={<SignIn islogin={setisAuthenticated} />}/>
           <Route path="/booklist" element={<PrivateRoutes isAuthenticated={isAuthenticated}>< BookList /></PrivateRoutes>}/>
-          <Route path="/booklist/book/:author" element={<PrivateRoutes isAuthenticated={isAuthenticated}>{isAuthenticated ? <Book  /> : < Navigate to ="login"/>}</PrivateRoutes>}/>
+          <Route path="/booklist/book/:id" element={<PrivateRoutes isAuthenticated={isAuthenticated}>{isAuthenticated ? <Book  /> : < Navigate to ="login"/>}</PrivateRoutes>}/>
           <Route path="/basket" element={<PrivateRoutes isAuthenticated={isAuthenticated}>{isAuthenticated ? <Basket status={true} /> : < Navigate to ="login"/>}</PrivateRoutes>}/>
           <Route path="*" element={<PrivateRoutes isAuthenticated={isAuthenticated}> {isAuthenticated ? <ErrorPage /> : < Navigate to ="login"/>}</PrivateRoutes>}/>
         </Route>
