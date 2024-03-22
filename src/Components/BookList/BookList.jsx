@@ -5,49 +5,25 @@ import './bookliststyle.css';
 import { useEffect, useState } from 'react';
 import {Loader} from '../loader/Loader';
 export const BookList = () =>{
-   const value = useBookList();
-   const [books, setBooks] = useState(value);
-   const [searchBook, setSearchBook] = useState('');
-   const [option, setOption] = useState('all')
-   
-   useEffect(()=>{
-    setOption('all');
-    const  newArraySearch = value.filter((item)=> {if(searchBook === " "){return item}else{return item.title.toLowerCase().includes(searchBook)}});
-    setBooks(newArraySearch);
-
-   },[searchBook,value]);
-
-   useEffect(()=>{
-    let newArreyOption = [];
-
-    value.forEach(element => {
-            if(option === "low"){
-                if(element.price >= 0 && element.price < 16){
-                    newArreyOption.push(element);
-                }
-            }
-            if(option === "middle"){
-                if(element.price >= 16 && element.price < 30){
-                    newArreyOption.push(element);
-                }
-            }
-            if(option === "hight"){
-                if(element.price > 30){
-                    newArreyOption.push(element);
-                }
-            }
-            if(option === "all"){
-                
-                    newArreyOption.push(element);
-                
-            }
-    });
-    setBooks(newArreyOption);
-   },[option,value])
+    const costFilters = {
+        low: (el) => el.price >= 0 && el.price < 16,
+        middle: (el) => el.price >= 16 && el.price < 30,
+        hight: (el) => el.price > 30,
+        all: () => true,
+        };
+        const value = useBookList();
+        const [books, setBooks] = useState(value);
+        const [searchBook, setSearchBook] = useState('');
+        const [option, setOption] = useState('all');
+        useEffect(()=>{
+            const filteredBooks = value.filter((book)=>book.title.toLowerCase().includes(searchBook.toLowerCase())).filter(costFilters[option]);
+            console.log(filteredBooks);
+            setBooks(filteredBooks);
+        },[searchBook,option])
    
    const handleSearch = (value) =>{setSearchBook(value);} 
    const hamdlerOption = ({target:{value}}) => {setOption(value);}
-    return (
+   return (
       <>
         <h2 className="visibility-hidden">Book list page</h2>
         
@@ -72,7 +48,7 @@ export const BookList = () =>{
             <div className="container">
             <section className="book_list">
                 <div id="conteinerforbooklist">
-                    { !books ? < Loader /> : books?.map((item,index) =>(
+                    { !books.length ? < Loader /> : books?.map((item,index) =>(
                     <article key={item.id} className="book">
                         <div className="imgBook"><img className="imgBookList" src={item.image ? item.image : imagenotfound}alt=""></img></div>
                         <p className="book_name">{item.title.length > 24 ? `${item.title.slice(0,24)}...` : item.title}</p>
@@ -88,3 +64,38 @@ export const BookList = () =>{
       </>
     );
 }
+        /* useEffect(()=>{
+         setOption('all');
+         const  newArraySearch = value.filter((item)=> {if(searchBook === " "){return item}else{return item.title.toLowerCase().includes(searchBook)}});
+     
+         setBooks(newArraySearch);
+     
+        },[searchBook,value]);
+     
+        useEffect(()=>{
+         let newArreyOption = [];
+     
+         value.forEach(element => {
+                 if(option === "low"){
+                     if(element.price >= 0 && element.price < 16){
+                         newArreyOption.push(element);
+                     }
+                 }
+                 if(option === "middle"){
+                     if(element.price >= 16 && element.price < 30){
+                         newArreyOption.push(element);
+                     }
+                 }
+                 if(option === "hight"){
+                     if(element.price > 30){
+                         newArreyOption.push(element);
+                     }
+                 }
+                 if(option === "all"){
+                     
+                         newArreyOption.push(element);
+                     
+                 }
+         });
+         setBooks(newArreyOption);
+        },[option,value]) */
