@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
-import cn from "classnames";
+import classnames from "classnames";
 import {LS_KEYS, LocalStorageService } from '../localStorage/localStorage';
 import './stylesignin.css';
 import avatar from '../../images/avatar.png';
@@ -61,7 +61,7 @@ const handlelLSLogin = () =>{
                         isswitchOn && createPortal(< SignInPortalValidation />,document.body )
                     }
                     <div className="input styleform"><input  onChange={getInput} className="focus-items I"  type="text" id="username" name="username" placeholder="type Username"></input></div>
-                    <div className="btn styleform"><button disabled={!inputvalue.length} className={!inputvalue.length ? "focus-items B:hover" : " B"} type="button" onClick={handlelLSLogin} >Sign In</button></div>
+                    <div className="btn styleform"><button disabled={isswitchOn} className={classnames("focus-items", !isswitchOn && "B")} type="button" onClick={handlelLSLogin} >Sign In</button></div>
                 </form>
             </div>
         </div>
