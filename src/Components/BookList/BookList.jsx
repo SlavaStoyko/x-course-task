@@ -64,38 +64,3 @@ export const BookList = () =>{
       </>
     );
 }
-        /* useEffect(()=>{
-         setOption('all');
-         const  newArraySearch = value.filter((item)=> {if(searchBook === " "){return item}else{return item.title.toLowerCase().includes(searchBook)}});
-     
-         setBooks(newArraySearch);
-     
-        },[searchBook,value]);
-     
-        useEffect(()=>{
-         let newArreyOption = [];
-     
-         value.forEach(element => {
-                 if(option === "low"){
-                     if(element.price >= 0 && element.price < 16){
-                         newArreyOption.push(element);
-                     }
-                 }
-                 if(option === "middle"){
-                     if(element.price >= 16 && element.price < 30){
-                         newArreyOption.push(element);
-                     }
-                 }
-                 if(option === "hight"){
-                     if(element.price > 30){
-                         newArreyOption.push(element);
-                     }
-                 }
-                 if(option === "all"){
-                     
-                         newArreyOption.push(element);
-                     
-                 }
-         });
-         setBooks(newArreyOption);
-        },[option,value]) */

@@ -90,7 +90,7 @@ margin: 25px 0;
     left: 55px;
 }
 .identifyItem{
-    width: 50px;
+    width: 10px;
 }
 .identifyItem.higenstatus{
     visibility: hidden;
@@ -118,4 +118,21 @@ margin: 25px 0;
     .formblock{
         margin: 0px;
         }
+}
+.validationPortal{
+    position: absolute;
+    left: calc(50% - 115px);
+    top: calc(50%);
+    background-color: white;
+   
+    padding: 10px 25px;
+    border-radius: 25px;
+    box-shadow: 1px 8px 9px 0px rgb(60, 60, 124);
+    flex-direction: column;
+   
+    align-items: stretch;
+ 
+}
+.validationPortal p ::after{
+    content: "";
 }
