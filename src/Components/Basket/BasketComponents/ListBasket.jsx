@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 
 export const ListBasket = (props) => {
+    const [data, setData] = useState(props.booksInCart);
     const [totalPrice, settotalPrice] = useState(0);
 
     useEffect(()=>{
+        
+
         let finalCost = 0;
     props.booksInCart.forEach(({totalCost}) => {
         finalCost = finalCost + totalCost;
         });
-        settotalPrice(finalCost)
-    },[props])
-    
+        settotalPrice(finalCost);
+        
+    },[data])
     return (
         <section className="box_list">
             
@@ -33,3 +36,14 @@ export const ListBasket = (props) => {
             </section>
     );
 }
+/* const LS = data.reduce((a,item) => {
+    if(data[0].id === item.id){
+        item.count = a + data[0].count
+        return item;
+    }
+  *console.log(item);
+  console.log(`↑REDUCE↑   ↓LS↓`);
+  console.log(data[0].id); *
+  
+},0); */
+/* const LS = [...data.reduce((acc,obj)=> acc.set(obj.id,obj),new Map()).values()]; */

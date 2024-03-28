@@ -4,50 +4,79 @@ import './styleonebook.css';
 import sprite from '../../images/sprites.svg';
 import { useOrderBook,useLSCart } from "../orderBook/useOrderBook";
 import { LS_KEYS, LocalStorageService } from "../localStorage/localStorage";
+import { useBookList } from "../Context/use-Context";
+import { useParams } from "react-router-dom";
+import { logDOM } from "@testing-library/react";
 
 
 
 export const Book = () =>{
    
-    const {book,countBook,priceforbook,BookAmount,Increment,Decrement} = useOrderBook(1);
+    
+    const value = useBookList();
+    const params = useParams();
+    const book = value.find((book) => book.id == params.id);
+    const [countBook,setCountbooks] = useState(1);
+    const priceforonebook = book.price;
+    const [priceforbook, setPriceforbook] = useState(book.price);
+    const [BookAmount,setBookAmount] = useState(book.amount);
     const [ls, setLS ] = useState(LocalStorageService.get(LS_KEYS.BOOK)|| []);
     const [isBtnActive,setIsBtnActive] = useState(false);
     useEffect(()=>{
-        const storage = ls;
-        
-            storage.find((item)=>{
-                 if(item.id == book.id){
-            
-                    if(countBook >  item.remainingBooks || countBook <  item.remainingBooks){
-                        console.log(countBook);
-                        console.log(item.remainingBooks);
-                        setIsBtnActive(true);
-                    }
-                    if(countBook >  item.remainingBooks || countBook < item.remainingBooks ){
-                        setIsBtnActive(false);
-                    }
-                    
+    
+        ls.forEach(element => {
+            if(element.id === book.id){
+                setCountbooks(element.count);
+                setPriceforbook(element.totalCost);
+                setBookAmount(book.amount  - element.count);
+                //console.log(element.id+" "+element.title+" "+element.count+" "+element.totalCost);
                 
             }
-        })
+        }) 
         
-    
-                 
-    },[BookAmount])
-    
-    const handleAddBtnCart = (id,title,count,totalCost,remainingBooks) => {LocalStorageService.set(LS_KEYS.BOOK,[...ls,{id,title,count,totalCost,remainingBooks}]);}
+    },[]);
 
-
-
-
-
-   
-    
-    return (
+    const Increment = () => {
+        setCountbooks(countBook+1);
+        setPriceforbook(priceforbook+priceforonebook); 
+        }
+    const Decrement = () => {
+        setCountbooks(countBook-1);
+        setPriceforbook(priceforbook-priceforonebook);
+    }
+    const handleAddBtnCart = (id,title,count,totalCost) => {
         
+        const LS = ls.reduce ((acc,obj)=>{
+            /* console.log(acc);
+            console.log(`------------------`);
+            console.log(obj); */
+            if(obj.count !== acc.count && obj.id === acc.id ){
+                obj.count = acc.count;
+                obj.totalCost = acc.totalCost;
+          
+                
+                return acc;
+            }else{
+               return acc;
+            }
+            
+        },[{id,title,count,totalCost},...ls])
+        
+        const uniqueAuthors = LS.reduce((accumulator, current) => {
+            if (!accumulator.find((item) => item.id === current.id)) {
+              accumulator.push(current);
+            }
+            return accumulator;
+          }, []);
+        
+              LocalStorageService.set(LS_KEYS.BOOK,uniqueAuthors);
+        }
+
+   return (
        
-        
-        <div className="container">
+       
+       
+       <div className="container">
            
             <div className="main">
             
@@ -78,12 +107,12 @@ export const Book = () =>{
                     <dl>
                         <div className="dpricce oneBook"><dt>Price,$</dt><dd id="priceforbook">{book.price}</dd></div>
                         <div className="dpricce setPlaseArrow"><dt><label htmlFor="count" id="label">Count</label></dt><dd /* style="display: flex;" */>
-                             <button disabled={isBtnActive} type="button"  onClick={Increment} className="navPriceBtn" id="navPriceBtnMax">
+                             <button disabled={countBook >= BookAmount } type="button"  onClick={Increment} className="navPriceBtn" id="navPriceBtnMax">
                                 <svg  width="55" height="40">
                                     <use xlinkHref={`${sprite}#up_arrow`}></use>
                                 </svg>
                             </button>
-                            <button disabled={isBtnActive} type="button"  onClick={Decrement} className="navPriceBtn" id="navPriceBtnMin">
+                            <button disabled={countBook <= 1} type="button"  onClick={Decrement} className="navPriceBtn" id="navPriceBtnMin">
                                 <svg width="55" height="40">
                                     <use xlinkHref={`${sprite}#down_arrow`}></use>
                                 </svg>
@@ -96,49 +125,24 @@ export const Book = () =>{
                     </dl>
                     
                 </div>
-                <button onClick={()=>{handleAddBtnCart(book.id,book.title,countBook,priceforbook,BookAmount)}}  type="button" className="orderbtn">Add to cart</button>
+                <button onClick={()=>{handleAddBtnCart(book.id,book.title,countBook,priceforbook)}}  type="button" className="orderbtn">Add to cart</button>
             </section>
         </div>
   
     </div>
         
-       
+        
         );
 }
-/*  <span  onClick={Increment} className="navPriceBtn" id="navPriceBtnMax">
-                                <svg  width="55" height="40">
-                                    <use xlinkHref={`${sprite}#up_arrow`}></use>
-                                </svg>
-                            </span> */
- /*  useEffect(()=>{
-        
-     setPriceforbook(book.price)
-        setCountbooks(1);
-        
-    },[params.id])
-    useEffect (() => {
-          if (countbooks === (book.amount - BookAmount) ||  countbooks < 1){
-              setIsBtnActive(true)
-        }
-          
-       
-    },[countbooks]);
-    
-    
 
-    const handleAddBtnCart = (id,title,count, totalCost) => {LocalStorageService.set(LS_KEYS.BOOK,[...ls,{id,title,count,totalCost}]);}
-    useEffect(()=>{
-        ls.forEach(element => {
-            if(element.id === book.id){
-                setCountbooks(element.count);
-                setPriceforbook(element.totalCost)
-                
-            }
-        });
-    },[ls])
+        /* const LS = ls.reduce((a,item) => {
+          if(item.id === id){
     
-    
-    
-    
-    
-    */
+               item.count = a.count + item.count;
+             
+              return a;
+          }
+          if(item.id !== id){
+              return a;
+          }
+        },{id,title,count,totalCost}); */

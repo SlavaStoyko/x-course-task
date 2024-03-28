@@ -17,7 +17,6 @@ export const BookList = () =>{
         const [option, setOption] = useState('all');
         useEffect(()=>{
             const filteredBooks = value.filter((book)=>book.title.toLowerCase().includes(searchBook.toLowerCase())).filter(costFilters[option]);
-            console.log(filteredBooks);
             setBooks(filteredBooks);
         },[searchBook,option])
    
