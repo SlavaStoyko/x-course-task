@@ -1,9 +1,11 @@
-import {Link} from 'react-router-dom';
-import imagenotfound from '../../images/imageNotFound.png';
-import { useBookList } from '../Context/use-Context';
-import './bookliststyle.css';
 import { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
+import { useBookList } from '../Context/use-Context';
+
 import {Loader} from '../loader/Loader';
+
+import './bookliststyle.css';
+import imagenotfound from '../../images/imageNotFound.png';
 export const BookList = () =>{
     const costFilters = {
         low: (el) => el.price >= 0 && el.price < 16,
@@ -47,7 +49,7 @@ export const BookList = () =>{
             <div className="container">
             <section className="book_list">
                 <div id="conteinerforbooklist">
-                    { !books.length ? < Loader /> : books?.map((item,index) =>(
+                    { !books.length ? < Loader /> : books?.map((item) =>(
                     <article key={item.id} className="book">
                         <div className="imgBook"><img className="imgBookList" src={item.image ? item.image : imagenotfound}alt=""></img></div>
                         <p className="book_name">{item.title.length > 24 ? `${item.title.slice(0,24)}...` : item.title}</p>

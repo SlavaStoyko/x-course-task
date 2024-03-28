@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
+
 import './style.css'
 import sprite from '../../images/sprites.svg';
-import { Link } from 'react-router-dom';
+
 export const ErrorPage = () => {
 
     return (

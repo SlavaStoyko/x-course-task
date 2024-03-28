@@ -1,5 +1,4 @@
 import './stylesignin.css';
-import sprite from "../../images/sprites.svg";
 export const SignInPortalValidation = () => {
 
     return (

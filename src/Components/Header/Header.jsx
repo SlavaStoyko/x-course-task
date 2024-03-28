@@ -1,24 +1,25 @@
-import { Link } from "react-router-dom";
-import sprite from '../../images/sprites.svg';
-import './header_style.css';
 import {useState } from "react";
-import avatar from '../../images/avatar.png';
+import { Link } from "react-router-dom";
+
 import {LS_KEYS, LocalStorageService } from "../localStorage/localStorage";
+
+import './header_style.css';
+import sprite from '../../images/sprites.svg';
+import avatar from '../../images/avatar.png';
 
 export const Header = ({islogin}) =>{
    
     const [isActive, setActive] = useState(false);
     const handleToggle = () => {
-        setActive(!isActive);  };
+        setActive(!isActive);  
+    };
+
     const handlerLogout = ()=> {
         LocalStorageService.remove(LS_KEYS.USER)
         islogin(false);
-    
     }
     const chackBasket = () => {
-     
-        setActive(false);
-        
+        setActive(false); 
     }
 
     return (
@@ -44,6 +45,3 @@ export const Header = ({islogin}) =>{
         
         );
     }
-    /* const [isCheckBasket, setISCheckBasket] = useState(basket);
-    setLocalStorageData(LocalStorageService.remove(LS_KEYS.BOOK));
-    setISCheckBasket(true) */

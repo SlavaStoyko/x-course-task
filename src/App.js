@@ -1,17 +1,8 @@
+import { useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { LayOut } from "./Components/LayOut/LayOut";
-import { BookList } from "./Components/BookList/BookList";
-import { SignIn } from "./Components/SignIn/SignIn";
-import { Book } from "./Components/Book/Book";
-import { Basket } from "./Components/Basket/Basket";
-import { PrivateRoutes } from './Components/privateRoutes/PrivateRoutes';
-import { useEffect, useState } from 'react';
-import { getBookList } from './Components/api/API';
-import { BookListProvider } from './Components/Context/use-Context';
-import { ErrorPage } from './Components/errorpage/ErrorPage';
-import books from "./Components/api/books.json";
 import { LS_KEYS, LocalStorageService } from './Components/localStorage/localStorage';
-
+import {PrivateRoutes, BookListProvider, LayOut, SignIn, BookList, Book, Basket, ErrorPage } from "./Components/index";
+import books from "./Components/api/books.json";
 function App() {
   const [isAuthenticated,setisAuthenticated] = useState(!!LocalStorageService.get(LS_KEYS.USER));
   const [booklist,setBooklist] = useState(books);

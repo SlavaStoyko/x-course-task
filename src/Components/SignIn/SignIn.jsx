@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
-import classnames from "classnames";
+
 import {LS_KEYS, LocalStorageService } from '../localStorage/localStorage';
+
+import { SignInPortalValidation } from './SignInPortalValidation';
+import classnames from "classnames";
 import './stylesignin.css';
 import avatar from '../../images/avatar.png';
-import { SignInPortalValidation } from './SignInPortalValidation';
 
 export const SignIn = ({islogin}) => {
 

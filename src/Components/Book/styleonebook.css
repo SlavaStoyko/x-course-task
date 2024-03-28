@@ -10,7 +10,7 @@
       url("../../fonts/Roboto/RobotoMono-Italic-VariableFont_wght.ttf"),
       url("../../fonts/Roboto/RobotoMono-VariableFont_wght.ttf");
   }
-/* *,::before,::after{border:0;margin: 0;} */
+
 .title-hiden{
     position: absolute;
     left:-10000px;
@@ -19,7 +19,7 @@
 .title{font-family:"Playfair Display", serif; font-style: italic;}
 p{margin: 0;}
 body{ 
-      /* font-family: 'Playfair Display', serif; */ 
+      
       font-family: 'Roboto Mono', monospace; 
       font-size: 18px;
        line-height: 1.8;
@@ -55,8 +55,6 @@ input[type=number] {
     }
     .ord{text-align: center;}
     .order_desctext_parag{font-weight: 400; font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-left:0px; text-transform: uppercase; font-style: italic;}
-    
-
     }
 
 .main{
@@ -120,7 +118,7 @@ input.ordnumb{border:1px solid black; width: 50px; height: 25px; border-radius: 
     font-weight: 600;
 }
 .dpricce *{
-/*margin: 10px 0;*/
+
 align-self:center;
 }
 .oneBook{
@@ -129,35 +127,22 @@ align-self:center;
 .totalBook{
     margin: 30px 0 60px 0;
 }
-/* .navPriceBtn{
-    transform: translateY(5px);
-    cursor: pointer;
-} */
+
 .navPriceBtn{
     position: absolute;
     cursor: pointer;
     right: 0px;
     opacity: 1;
 } 
-/* .navPriceBtn.visibleAtr{
-    opacity: 1;
-    transition: 0.3s ease-out;
-}  */
+
 #navPriceBtnMax{
 top: -35px;
 
 }
-/* #navPriceBtnMax:hover{
-    transform: translateY(-5px);
-    transition: all 0.3s ease-in;
-    } */
+
 #navPriceBtnMin{
     bottom: -45px;
     }
-    /* #navPriceBtnMin:hover{
-        transform: translateY(5px);
-        transition: all 0.3s ease-in;
-        } */
 .descriptionbook_psart2 .order_desctext_parag{
     text-transform: lowercase;
     font-style: normal;

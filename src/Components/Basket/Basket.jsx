@@ -4,9 +4,7 @@ import { EmptyBasket } from './BasketComponents/EmptyBasket';
 import { ListBasket } from './BasketComponents/ListBasket';
 import './style.css'
 
-
 export const Basket = () =>{
-    
 const [isActiveCart, setIsActiveCart] = useState(!!LocalStorageService.get(LS_KEYS.BOOK));
 
 const handleCleanStorage = () => {
@@ -19,8 +17,6 @@ return (
             {isActiveCart  ? < ListBasket booksInCart={LocalStorageService.get(LS_KEYS.BOOK)}  /> : < EmptyBasket /> }
        
         </div>
-     
-     
      );
     }
    
