@@ -6,8 +6,8 @@ export const LayOut = (props) =>{
     return ( 
         <div className='wrapper'>
             <header>
-                <div className="conteiner">
-                { props.Auth ?  <Header islogin={props.islogin} /> : <h1 style={{textAlign:'center'}}>X-course-task / Vyacheslav Stoyko</h1> }
+                <div className="container">
+                { props.Auth ?  <Header isLogin={props.isLogin} /> : <h1 style={{textAlign:'center'}}>X-course-task / Vyacheslav Stoyko</h1> }
                 </div>
             </header>
             <main>

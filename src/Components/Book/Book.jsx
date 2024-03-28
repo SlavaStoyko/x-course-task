@@ -5,7 +5,7 @@ import { useBookList } from "../Context/use-Context";
 import { LS_KEYS, LocalStorageService } from "../localStorage/localStorage";
 
 import './styleonebook.css';
-import imagenotfound from '../../images/imageNotFound.png';
+import imageNotFound from '../../images/imageNotFound.png';
 import sprite from '../../images/sprites.svg';
 
 export const Book = () =>{
@@ -13,29 +13,28 @@ export const Book = () =>{
     const value = useBookList();
     const params = useParams();
     const book = value.find((book) => book.id == params.id);
-    const [countBook,setCountbooks] = useState(1);
-    const priceforonebook = book.price;
-    const [priceforbook, setPriceforbook] = useState(book.price);
+    const [countBook,setCountBooks] = useState(1);
+    const priceForOneBook = book.price;
+    const [priceForBook, setPriceForBook] = useState(book.price);
     const [BookAmount,setBookAmount] = useState(book.amount);
     const [ls, setLS ] = useState(LocalStorageService.get(LS_KEYS.BOOK)|| []);
-    const [isBtnActive,setIsBtnActive] = useState(false);
 
     useEffect(()=>{
         ls.forEach(element => {
             if(element.id === book.id){
-                setCountbooks(element.count);
-                setPriceforbook(element.totalCost);  
+                setCountBooks(element.count);
+                setPriceForBook(element.totalCost);  
             }
         })  
     },[]);
 
     const Increment = () => {
-        setCountbooks(countBook+1);
-        setPriceforbook(priceforbook+priceforonebook); 
+        setCountBooks(countBook+1);
+        setPriceForBook(priceForBook+priceForOneBook); 
         }
     const Decrement = () => {
-        setCountbooks(countBook-1);
-        setPriceforbook(priceforbook-priceforonebook);
+        setCountBooks(countBook-1);
+        setPriceForBook(priceForBook-priceForOneBook);
     }
     const handleAddBtnCart = (id,title,count,totalCost) => {
         
@@ -49,14 +48,14 @@ export const Book = () =>{
             } 
         },[{id,title,count,totalCost},...ls])
         
-        const FILTERBOOKCART = LS.reduce((accumulator, current) => {
+        const filterBookCart = LS.reduce((accumulator, current) => {
             if (!accumulator.find((item) => item.id === current.id)) {
               accumulator.push(current);
             }
             return accumulator;
           }, []);
         
-              LocalStorageService.set(LS_KEYS.BOOK,FILTERBOOKCART);
+              LocalStorageService.set(LS_KEYS.BOOK,filterBookCart);
         }
 
    return (
@@ -64,33 +63,33 @@ export const Book = () =>{
            
             <div className="main">
             
-            <section className="descriptionbook">
+            <section className="descriptionBook">
                 <h2 className="visibility-hidden">Book list page</h2>
-                <div className="descriptionbook_part1">
-                    <div className="descimg"> <img src={book.image ? book.image : imagenotfound }  alt="book websocket"></img></div>
-                 <div className="desctext">
-                    <dl className="order_desctext">
-                    <dt className="ord order_desctext_title">Book name:</dt>  <dd className="ord order_desctext_parag">{book.title}</dd>
-                    <dt className="ord order_desctext_title">Book autor:</dt> <dd className="ord order_desctext_parag">{book.author}</dd>
-                    <dt className="ord order_desctext_title">Book level:</dt> <dd className="ord order_desctext_parag">{book.level}</dd>
-                    <dt className="ord order_desctext_title">Book tags:</dt>  <dd className="ord order_desctext_parag">{book.tags}</dd>
+                <div className="descriptionBook_part1">
+                    <div className="desc_img"> <img src={book.image ? book.image : imageNotFound }  alt="book websocket"></img></div>
+                 <div className="desc_text">
+                    <dl className="order_desc_text">
+                    <dt className="ord order_desc_text_title">Book name:</dt>  <dd className="ord order_desc_text_chapter">{book.title}</dd>
+                    <dt className="ord order_desc_text_title">Book author:</dt> <dd className="ord order_desc_text_chapter">{book.author}</dd>
+                    <dt className="ord order_desc_text_title">Book level:</dt> <dd className="ord order_desc_text_chapter">{book.level}</dd>
+                    <dt className="ord order_desc_text_title">Book tags:</dt>  <dd className="ord order_desc_text_chapter">{book.tags}</dd>
                     </dl>
                     </div>
                 </div>
-                <div className="descriptionbook_psart2">
-                    <dl className="order_desctext" >
-                        <dt className="ord order_desctext_title">Description:</dt>  <dd className="ord order_desctext_parag" >{book.description}</dd>
+                <div className="descriptionBook_part2">
+                    <dl className="order_desc_text" >
+                        <dt className="ord order_desc_text_title">Description:</dt>  <dd className="ord order_desc_text_chapter" >{book.description}</dd>
                     </dl>
                 </div>
             </section>
      
         
-            <section className="orderblock">
+            <section className="orderBlock">
                 <h2 className="visibility-hidden">Add to cart</h2>
-                <div className="orderconteiner">
+                <div className="orderContainer">
                     <dl>
-                        <div className="dpricce oneBook"><dt>Price,$</dt><dd id="priceforbook">{book.price}</dd></div>
-                        <div className="dpricce setPlaseArrow"><dt><label htmlFor="count" id="label">Count</label></dt><dd>
+                        <div className="orderDescription oneBook"><dt>Price, $</dt><dd>{book.price}</dd></div>
+                        <div className="orderDescription setPlaceArrow"><dt><label htmlFor="count" id="label">Count</label></dt><dd>
                              <button disabled={countBook >= BookAmount } type="button"  onClick={Increment} className="navPriceBtn" id="navPriceBtnMax">
                                 <svg  width="55" height="40">
                                     <use xlinkHref={`${sprite}#up_arrow`}></use>
@@ -102,14 +101,14 @@ export const Book = () =>{
                                 </svg>
                             </button>
                             
-                            <input className="ordnumb" type="number" min = "1" max = "42" value={countBook} id="count" name="count" ></input>
+                            <input className="inputView" type="number" min = "1" max = "42" value={countBook} id="count" name="count" ></input>
                         
                         </dd></div>
-                        <div className="dpricce totalBook"><dt>Total price</dt><dd id="TPBS">{priceforbook.toFixed(2)}</dd></div>
+                        <div className="orderDescription totalBook"><dt>Total price</dt><dd id="TPBS">{priceForBook.toFixed(2)}</dd></div>
                     </dl>
                     
                 </div>
-                <button onClick={()=>{handleAddBtnCart(book.id,book.title,countBook,priceforbook)}}  type="button" className="orderbtn">Add to cart</button>
+                <button onClick={()=>{handleAddBtnCart(book.id,book.title,countBook,priceForBook)}}  type="button" className="orderBtn">Add to cart</button>
             </section>
         </div>
   

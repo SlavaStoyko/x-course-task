@@ -4,9 +4,9 @@ export const EmptyBasket = () => {
 
     return (
 <section className="box_list">
-            <h1 className="hidenheader visibility-hidden">Empty shopping cart page</h1>
+            <h1 className="visibility-hidden">Empty shopping cart page</h1>
             <div className="list" key="EmptyBasket">
-            <div class="buscet_img">
+            <div class="basket_img">
                     <svg>
                         <use xlinkHref={`${sprite}#basket`}></use>
                     </svg>

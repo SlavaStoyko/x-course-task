@@ -2,29 +2,29 @@ import { useEffect, useState } from "react";
 
 export const ListBasket = (props) => {
     const [data, setData] = useState(props.booksInCart);
-    const [totalPrice, settotalPrice] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(()=>{
         let finalCost = 0;
     props.booksInCart.forEach(({totalCost}) => {
         finalCost = finalCost + totalCost;
         });
-        settotalPrice(finalCost);
+        setTotalPrice(finalCost);
         
     },[data])
     return (
         <section className="box_list">
             
-            <h1 className="hidenheader visibility-hidden">books in the basket</h1>
+            <h1 className="visibility-hidden">books in the basket</h1>
             <div className="list" key="listBasket">
                 
         <ul className="list_books">
-            {props.booksInCart.map((itemcart)=>(
+            {props.booksInCart.map((itemCart)=>(
                     <li>
-                        <article className="listArticleBasket" key={itemcart.id} >
-                            <p className="cartTitleItem">{itemcart.title}</p>
-                            <p className="cartCountItem">{itemcart.count}</p>
-                            <p className="cartPriceItem">$ {itemcart.totalCost.toFixed(2)}</p>
+                        <article className="listArticleBasket" key={itemCart.id} >
+                            <p className="cartTitleItem">{itemCart.title}</p>
+                            <p className="cartCountItem">{itemCart.count}</p>
+                            <p className="cartPriceItem">$ {itemCart.totalCost.toFixed(2)}</p>
                         </article>
                     </li>
                  ))}   

@@ -9,27 +9,27 @@ import classnames from "classnames";
 import './stylesignin.css';
 import avatar from '../../images/avatar.png';
 
-export const SignIn = ({islogin}) => {
+export const SignIn = ({isLogin}) => {
 
-    const [isswitchOn, setIsSwitchOn] = useState(true);
+    const [isSwitchOn, setIsSwitchOn] = useState(true);
     const navigate = useNavigate();
-    const [inputvalue,setinputvalue] = useState('');
+    const [inputValue,setInputValue] = useState('');
     useEffect(()=>{
-        if(inputvalue.length >=4 && inputvalue.length <=16){
+        if(inputValue.length >=4 && inputValue.length <=16){
             setIsSwitchOn(false);
         }else{
             setIsSwitchOn(true);
     
         }
-    },[inputvalue])
+    },[inputValue])
 const getInput = ({target:{value}})=>{
-    setinputvalue(value.trim());
+    setInputValue(value.trim());
     
 }
-const handlelLSLogin = () =>{
-    if(inputvalue.length >=4 && inputvalue.length <=16){
-        LocalStorageService.set(LS_KEYS.USER,inputvalue)
-        islogin(true);
+const handlerLSLogin = () =>{
+    if(inputValue.length >=4 && inputValue.length <=16){
+        LocalStorageService.set(LS_KEYS.USER,inputValue)
+        isLogin(true);
         navigate('../', {replace:true});
         
     }
@@ -37,22 +37,22 @@ const handlelLSLogin = () =>{
    
 }
    return (
-    <div className="conteiner">
-        <div className="flexform ">
-            <div className="imgpicture">
-                <div className="wraplogoimg">
-                        <img className="pictureuser" src={avatar} alt="logo pictures"></img>
+    <div className="container">
+        <div className="flexForm ">
+            <div className="imgPicture">
+                <div className="wrapLogoImg">
+                        <img className="pictureUser" src={avatar} alt="logo pictures"></img>
                 </div>
             </div>
 
-            <div className="formblock">
+            <div className="formBlock">
                 <form action="/" method="post">
                     <div className="label "><label htmlFor="username"><strong>Username</strong></label><br/></div>
                     {
-                        isswitchOn && createPortal(< SignInPortalValidation />,document.body )
+                        isSwitchOn && createPortal(< SignInPortalValidation />,document.body )
                     }
-                    <div className="input styleform"><input  onChange={getInput} className="focus-items I"  type="text" id="username" name="username" placeholder="type Username"></input></div>
-                    <div className="btn styleform"><button disabled={isswitchOn} className={classnames("focus-items", !isswitchOn && "B")} type="button" onClick={handlelLSLogin} >Sign In</button></div>
+                    <div className="input"><input  onChange={getInput} className="focus-items I"  type="text" id="username" name="username" placeholder="type Username"></input></div>
+                    <div className="btn"><button disabled={isSwitchOn} className={classnames("focus-items", !isSwitchOn && "B")} type="button" onClick={handlerLSLogin} >Sign In</button></div>
                 </form>
             </div>
         </div>

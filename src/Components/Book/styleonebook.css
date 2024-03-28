@@ -48,13 +48,13 @@ input[type=number] {
 }
 }
 @media (max-width:880px){
-    .descriptionbook_part1{
+    .descriptionBook_part1{
         flex-direction: column;
         gap: 60px;
         align-items: center;
     }
     .ord{text-align: center;}
-    .order_desctext_parag{font-weight: 400; font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-left:0px; text-transform: uppercase; font-style: italic;}
+    .order_desc_text_chapter{font-weight: 400; font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-left:0px; text-transform: uppercase; font-style: italic;}
     }
 
 .main{
@@ -64,12 +64,12 @@ gap: 20px;
 
 }
 
-.descriptionbook{
+.descriptionBook{
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.descriptionbook_part1{
+.descriptionBook_part1{
     display: flex;
     justify-content: flex-start;
     
@@ -77,24 +77,24 @@ gap: 20px;
 }
 
 
-.descimg{
+.desc_img{
     border: 10px groove rgb(129, 137, 252);
     
     padding: 25px 65px;
     border-radius: 25px;
     background-color: rgb(206, 223, 255);
 }
-.descimg img{
+.desc_img img{
     box-shadow: 15px 10px 0px 1px rgb(229, 228, 223),25px 15px 0px 1px rgb(251, 253, 253);;
     border-radius: 2%;
     transform: translateX(-15px);
 }
-.order_desctext_title{font-weight: 600; font-family: 'Playfair Display', serif; font-size: 1.3rem;}
+.order_desc_text_title{font-weight: 600; font-family: 'Playfair Display', serif; font-size: 1.3rem;}
 @media (min-width:880px){
-    .order_desctext_parag{font-weight: 400; font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-left:80px; text-transform: uppercase; font-style: italic;}
+    .order_desc_text_chapter{font-weight: 400; font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-left:80px; text-transform: uppercase; font-style: italic;}
     }
     @media (max-width:380px){
-        .descimg{
+        .desc_img{
             
             padding: 25px;
             
@@ -102,22 +102,22 @@ gap: 20px;
     }
 
 
-/* -----------------------------------------orderblock----------------------------------- */
-.setPlaseArrow{
+/* -----------------------------------------orderBlock----------------------------------- */
+.setPlaceArrow{
     position: relative;
 }
-.orderblock{border:2px solid black; align-items: center; width: 320px; height:fit-content; position: relative; padding: 10px; border-radius: 10px; user-select:none;}
-.orderconteiner{width: 320px;
+.orderBlock{border:2px solid black; align-items: center; width: 320px; height:fit-content; position: relative; padding: 10px; border-radius: 10px; user-select:none;}
+.orderContainer{width: 320px;
     height: fit-content;}
-.orderbtn{font-weight: 600; text-align: center; padding: 5px 10px; border:1px solid black; border-radius: 5px; position: absolute; bottom: 10px; right: 15px;}
-.orderbtn:hover{background-color: black; color: white;}
-input.ordnumb{border:1px solid black; width: 50px; height: 25px; border-radius: 10px;text-align: center;}
-.dpricce{
+.orderBtn{font-weight: 600; text-align: center; padding: 5px 10px; border:1px solid black; border-radius: 5px; position: absolute; bottom: 10px; right: 15px;}
+.orderBtn:hover{background-color: black; color: white;}
+input.inputView{border:1px solid black; width: 50px; height: 25px; border-radius: 10px;text-align: center;}
+.orderDescription{
     display: flex;
     justify-content: space-between;
     font-weight: 600;
 }
-.dpricce *{
+.orderDescription *{
 
 align-self:center;
 }
@@ -143,11 +143,11 @@ top: -35px;
 #navPriceBtnMin{
     bottom: -45px;
     }
-.descriptionbook_psart2 .order_desctext_parag{
+.descriptionBook_part2 .order_desc_text_chapter{
     text-transform: lowercase;
     font-style: normal;
     text-align:justify;
 }
 @media (max-width:460px) {
-    .orderconteiner{width: calc(180px + 140 * (100vw - 220px) / 460); margin: 0 auto;}
+    .orderContainer{width: calc(180px + 140 * (100vw - 220px) / 460); margin: 0 auto;}
 }

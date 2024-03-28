@@ -70,7 +70,7 @@ main{
     border: 1px solid black;
     border-radius: 5px;
 }
-#gsearch{
+#searchBooksPanel{
     padding: 10px 0px 10px 25px;
     border-radius: 8px;
     width: 500px;
@@ -83,7 +83,7 @@ main{
     top: 5px;
 
 }
-#conteinerforbooklist{
+#containerForBookList{
     display: flex;
     flex-wrap: wrap;
     gap: 18px;
@@ -128,7 +128,7 @@ main{
     border-radius: 10px;
 }
 @media (max-width:500px){
-    #gsearch{
+    #searchBooksPanel{
       
         width: calc(220px + 300 * (100vw - 200px) / 500);
         
@@ -149,7 +149,7 @@ main{
 
 }
 @media (max-width:360px){
-    #gsearch{
+    #searchBooksPanel{
         width: 200px;
     }
 }

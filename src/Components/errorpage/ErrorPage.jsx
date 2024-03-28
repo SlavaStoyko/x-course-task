@@ -12,24 +12,24 @@ export const ErrorPage = () => {
             <h1 className="visibility-hidden">Error Page</h1>
             <div className="list" key="ErrorPage">
                 <div className="error404">
-                    <div className="error eimg1">
+                    <div className="error">
                     <svg>
                         <use xlinkHref={`${sprite}#report_error`}></use>
                     </svg>
                 </div>
-                <div className="error eimg2">
+                <div className="error">
                     <svg>
                         <use xlinkHref={`${sprite}#manufacture_error`}></use>
                     </svg>
                 </div>
-                <div className="error eimg2">
+                <div className="error">
                     <svg>
                         <use xlinkHref={`${sprite}#alertPerson`}></use>
                     </svg>
                 </div>
                 </div>
                 <p style={{textAlign:"center"}}>Oops,something went wrong. 404 error</p>
-                    <Link className="errorGohomepages" to="/">Back to home page</Link>
+                    <Link className="errorHomePages" to="/">Back to home page</Link>
                 </div>
                 </section>
                 </div>
