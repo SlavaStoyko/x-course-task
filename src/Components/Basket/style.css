@@ -50,7 +50,7 @@ border-radius: 5px;
 
 .listArticleBasket{
     display: grid;
-    grid-template-columns: 1fr 0.5fr 1fr;
+    grid-template-columns: 1fr 0.5fr 1fr 0.5fr;
     align-items: center;
     
 }
@@ -69,6 +69,13 @@ border-radius: 5px;
 .TextAboutBasket{
     text-align: center;
     font-size: 28px;
+}
+
+.btnModifyCard{
+    fill: rgb(206, 223, 255);
+}
+.btnModifyCard:hover{
+    fill: rgb(129, 137, 252);
 }
 
 /* ERROR */

@@ -17,7 +17,7 @@ export const Book = () =>{
     const priceForOneBook = book.price;
     const [priceForBook, setPriceForBook] = useState(book.price);
     const [BookAmount,setBookAmount] = useState(book.amount);
-    const [ls, setLS ] = useState(LocalStorageService.get(LS_KEYS.BOOK)|| []);
+    const [ls, setLS ] = useState(LocalStorageService.get(LS_KEYS.BOOK)||[]);
 
     useEffect(()=>{
         ls.forEach(element => {

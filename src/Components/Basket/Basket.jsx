@@ -14,7 +14,7 @@ return (
     <div className="box">
             <button onClick={handleCleanStorage} disabled={!isActiveCart} id="purchase" type="button">Purchase</button>
             
-            {isActiveCart  ? < ListBasket booksInCart={LocalStorageService.get(LS_KEYS.BOOK)}  /> : < EmptyBasket /> }
+            {isActiveCart  ? < ListBasket cleanCard={setIsActiveCart} booksInCart={LocalStorageService.get(LS_KEYS.BOOK)}  /> : < EmptyBasket /> }
        
         </div>
      );
