@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/x-course-task/static/css/main.074511b4.css",
-    "main.js": "/x-course-task/static/js/main.50a017f2.js",
+    "main.css": "/x-course-task/static/css/main.00b284da.css",
+    "main.js": "/x-course-task/static/js/main.df47896a.js",
     "static/media/PlayfairDisplay-VariableFont_wght.ttf": "/x-course-task/static/media/PlayfairDisplay-VariableFont_wght.20240034b80f50c3ad00.ttf",
     "static/media/PlayfairDisplay-Italic-VariableFont_wght.ttf": "/x-course-task/static/media/PlayfairDisplay-Italic-VariableFont_wght.2f795353f413479428d6.ttf",
     "static/media/RobotoMono-Italic-VariableFont_wght.ttf": "/x-course-task/static/media/RobotoMono-Italic-VariableFont_wght.a53103a7b0e22765d7ff.ttf",
     "static/media/RobotoMono-VariableFont_wght.ttf": "/x-course-task/static/media/RobotoMono-VariableFont_wght.e14e25b7c497634efdfe.ttf",
     "static/media/avatar.png": "/x-course-task/static/media/avatar.0d14c6999b4a5c8e86a7.png",
     "static/media/imageNotFound.png": "/x-course-task/static/media/imageNotFound.298b98203c3825c61303.png",
-    "static/media/sprites.svg": "/x-course-task/static/media/sprites.66877a9c60f709ad5d27fd58b54a5a92.svg",
+    "static/media/sprites.svg": "/x-course-task/static/media/sprites.4a28abe1e1e41c5c6f2adff47244ec5e.svg",
     "index.html": "/x-course-task/index.html",
-    "main.074511b4.css.map": "/x-course-task/static/css/main.074511b4.css.map",
-    "main.50a017f2.js.map": "/x-course-task/static/js/main.50a017f2.js.map"
+    "main.00b284da.css.map": "/x-course-task/static/css/main.00b284da.css.map",
+    "main.df47896a.js.map": "/x-course-task/static/js/main.df47896a.js.map"
   },
   "entrypoints": [
-    "static/css/main.074511b4.css",
-    "static/js/main.50a017f2.js"
+    "static/css/main.00b284da.css",
+    "static/js/main.df47896a.js"
   ]
 }
