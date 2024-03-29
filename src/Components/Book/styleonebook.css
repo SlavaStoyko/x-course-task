@@ -131,17 +131,23 @@ align-self:center;
 .navPriceBtn{
     position: absolute;
     cursor: pointer;
-    right: 0px;
+    right: 4px;
     opacity: 1;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2px 15px;
+    color: black;
+    background-color: rgb(206, 223, 255);
 } 
-
+.navPriceBtn:hover{background-color: rgb(129, 137, 252); color:white;}
 #navPriceBtnMax{
-top: -35px;
+top: -28px;
 
 }
 
 #navPriceBtnMin{
-    bottom: -45px;
+    bottom: -32px;
     }
 .descriptionBook_part2 .order_desc_text_chapter{
     text-transform: lowercase;

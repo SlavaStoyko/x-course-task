@@ -1,6 +1,7 @@
 
 
-.title .header_title .linkTitle{font-size: 23px; background-color:inherit; border: none;}
+.title .header_title .linkTitle{font-size: 21px; background-color:inherit; border: none; }
+.title{text-align: center;}
 .menu-btn{
     display: none;
     border: 1px solid black;
@@ -70,7 +71,7 @@
         transform: translateY(10px);
     }
     .title{
-    font-size:calc(10px + 6 * (100vw - 220px) / 460);
+    font-size:14px
     }
  
     .header_block{

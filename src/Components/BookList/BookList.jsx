@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import { useBookList } from '../Context/use-Context';
 
 import {Loader} from '../loader/Loader';
-
+import classnames from "classnames";
 import './bookliststyle.css';
 import imageNotFound from '../../images/imageNotFound.png';
 export const BookList = () =>{
@@ -47,7 +47,7 @@ export const BookList = () =>{
                 </article>
             </section>
             <div className="container">
-            <section className="book_list">
+            <section className={classnames("book_list", !books.length ? "emptyList" : null)}>
                 <div id="containerForBookList">
                     { !books.length ? < Loader /> : books?.map((item) =>(
                     <article key={item.id} className="book">

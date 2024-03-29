@@ -21,7 +21,7 @@ button{background-color: #FFFFFF;}
     border-radius: 50%;
 }
 
-h1{font-size: 26px;}
+h1{font-size: 21px;}
 .container{
     max-width: 1460px;
       box-sizing: border-box; 
@@ -106,7 +106,7 @@ margin: 25px 0;
 }
 .validationPortal{
     position: absolute;
-    left: calc(50% - 115px);
+    left: calc(50% - 100px);
     top: calc(50%);
     background-color: white;
    

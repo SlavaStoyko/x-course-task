@@ -91,14 +91,10 @@ export const Book = () =>{
                         <div className="orderDescription oneBook"><dt>Price, $</dt><dd>{book.price}</dd></div>
                         <div className="orderDescription setPlaceArrow"><dt><label htmlFor="count" id="label">Count</label></dt><dd>
                              <button disabled={countBook >= BookAmount } type="button"  onClick={Increment} className="navPriceBtn" id="navPriceBtnMax">
-                                <svg  width="55" height="40">
-                                    <use xlinkHref={`${sprite}#up_arrow`}></use>
-                                </svg>
+                               +
                             </button>
                             <button disabled={countBook <= 1} type="button"  onClick={Decrement} className="navPriceBtn" id="navPriceBtnMin">
-                                <svg width="55" height="40">
-                                    <use xlinkHref={`${sprite}#down_arrow`}></use>
-                                </svg>
+                                –
                             </button>
                             
                             <input className="inputView" type="number" min = "1" max = "42" value={countBook} id="count" name="count" ></input>
